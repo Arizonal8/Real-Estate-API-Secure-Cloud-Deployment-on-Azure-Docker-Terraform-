@@ -1,0 +1,19 @@
+# 10_postman-testing.txt
+# Postman Testing
+
+## Problems I Faced
+- Some routes failed.
+- Missing env vars caused 500 errors.
+
+## Steps I Took
+1. Tested each route manually.
+2. Verified:
+   - GET /properties
+   - POST /auth/register
+   - POST /auth/login
+   - POST /upload/image
+
+3. Fixed missing variables.
+
+## Lessons Learned
+Postman is essential for verifying deployments.

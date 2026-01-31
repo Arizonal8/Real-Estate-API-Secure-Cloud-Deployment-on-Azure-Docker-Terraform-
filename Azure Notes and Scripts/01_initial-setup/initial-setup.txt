@@ -1,0 +1,48 @@
+# 01_initial-setup.txt
+# Initial Setup and Project Preparation
+
+## Overview
+This note explains how I started the Real Estate API project from scratch after cloning an open-source repo that was not deployment-ready.
+
+## Problems I Faced
+- The repo had no Dockerfile.
+- No .env example.
+- No deployment instructions.
+- Folder structure was inconsistent.
+- Config files were missing or incomplete.
+
+## Steps I Took
+1. Cloned the repo:
+   git clone <repo-url>
+
+2. Cleaned the project:
+   - Removed unused folders.
+   - Removed broken configs.
+   - Reorganized the backend into:
+     /src
+     /config
+     /routes
+     /controllers
+     /models
+
+3. Created a new .env file:
+   MONGO_URI=
+   IMAGEKIT_PUBLIC_KEY=
+   IMAGEKIT_PRIVATE_KEY=
+   IMAGEKIT_URL_ENDPOINT=
+   SMTP_USER=
+   SMTP_PASS=
+
+4. Updated config files to use environment variables:
+   Example (config/index.js):
+   export default {
+     mongoUri: process.env.MONGO_URI,
+     imagekit: {
+       publicKey: process.env.IMAGEKIT_PUBLIC_KEY,
+       privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
+       urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT
+     }
+   }
+
+## Lessons Learned
+Always rebuild an open-source repo to match your deployment environment.

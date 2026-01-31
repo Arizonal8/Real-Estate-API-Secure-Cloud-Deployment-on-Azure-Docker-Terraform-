@@ -1,0 +1,36 @@
+# 02_repo-cleanup.txt
+# Repo Cleanup and Restructuring
+
+## Problems I Found
+- Duplicate folders.
+- Old configs that didn’t match my environment.
+- Missing scripts.
+- No clear entry point.
+
+## Steps I Took
+1. Removed unused folders:
+   rm -rf old-config
+   rm -rf legacy
+
+2. Created a clean structure:
+   /src
+   /config
+   /routes
+   /controllers
+   /models
+   Dockerfile
+   package.json
+
+3. Added missing scripts to package.json:
+   "scripts": {
+     "start": "node src/index.js",
+     "dev": "nodemon src/index.js"
+   }
+
+4. Verified entry point:
+   src/index.js:
+   import app from './app.js'
+   app.listen(4000, () => console.log("Server running"))
+
+## Lessons Learned
+A clean repo makes deployment easier.

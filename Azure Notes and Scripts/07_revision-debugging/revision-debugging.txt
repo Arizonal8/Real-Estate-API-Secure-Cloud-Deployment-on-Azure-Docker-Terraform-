@@ -1,0 +1,21 @@
+# 07_revision-debugging.txt
+# Debugging Azure Revisions
+
+## Problems I Faced
+- CrashLoopBackOff
+- Old revisions restarting automatically
+- Missing secrets causing crashes
+
+## Commands I Used
+az containerapp revision list
+az containerapp revision deactivate
+
+## Steps I Took
+1. Listed all revisions.
+2. Deactivated every broken revision.
+3. Reset secrets.
+4. Updated env vars.
+5. Waited for Azure to create a new revision.
+
+## Lessons Learned
+If revisions keep failing, deactivate everything and rebuild.

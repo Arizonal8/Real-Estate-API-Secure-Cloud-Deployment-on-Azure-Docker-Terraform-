@@ -1,0 +1,21 @@
+# 08_imagekit-integration.txt
+# ImageKit Integration
+
+## Problems I Faced
+- Missing publicKey error.
+- Wrong URL endpoint.
+- Backend crashed before starting.
+
+## Fix
+Set secrets:
+imagekit-public-key
+imagekit-private-key
+imagekit-url-endpoint
+
+Mapped them:
+IMAGEKIT_PUBLIC_KEY=secretref:imagekit-public-key
+IMAGEKIT_PRIVATE_KEY=secretref:imagekit-private-key
+IMAGEKIT_URL_ENDPOINT=secretref:imagekit-url-endpoint
+
+## Lessons Learned
+ImageKit requires all 3 values to work.

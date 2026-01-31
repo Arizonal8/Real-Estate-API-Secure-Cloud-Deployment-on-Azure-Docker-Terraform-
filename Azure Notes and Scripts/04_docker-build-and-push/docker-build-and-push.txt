@@ -1,0 +1,23 @@
+# 04_docker-build-and-push.txt
+# Building and Pushing Docker Images
+
+## Problems I Faced
+- Dockerfile errors.
+- Missing dependencies.
+- Wrong working directory.
+
+## Final Dockerfile
+FROM node:18-alpine
+WORKDIR /app
+COPY package*.json ./
+RUN npm install
+COPY . .
+EXPOSE 4000
+CMD ["npm", "start"]
+
+## Commands I Used
+docker build -t arizonal8/realestate-api-lab .
+docker push arizonal8/realestate-api-lab
+
+## Lessons Learned
+If it doesn’t run locally, it won’t run in Azure.

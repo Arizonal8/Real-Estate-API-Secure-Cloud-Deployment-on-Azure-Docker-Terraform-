@@ -1,0 +1,18 @@
+# 09_cosmosdb-integration.txt
+# CosmosDB Integration
+
+## Problems I Faced
+- Long connection string.
+- One missing character broke everything.
+- Mongoose failed to connect.
+
+## Fix
+1. Copied connection string directly from Azure.
+2. Stored it as a secret:
+   mongo-uri="mongodb://..."
+
+3. Mapped it:
+   MONGO_URI=secretref:mongo-uri
+
+## Lessons Learned
+Never type the connection string manually.

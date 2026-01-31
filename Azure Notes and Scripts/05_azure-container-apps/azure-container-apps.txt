@@ -1,0 +1,27 @@
+# 05_azure-container-apps.txt
+# Deploying to Azure Container Apps
+
+## Problems I Faced
+- Revisions failing.
+- Missing secrets.
+- Wrong environment variables.
+
+## Commands I Used
+az containerapp create ...
+az containerapp update ...
+az containerapp revision list ...
+az containerapp revision deactivate ...
+
+## Steps I Took
+1. Created the container app.
+2. Updated image:
+   az containerapp update --image arizonal8/realestate-api-lab
+
+3. Listed revisions:
+   az containerapp revision list --output table
+
+4. Deactivated broken revisions:
+   az containerapp revision deactivate --revision <name>
+
+## Lessons Learned
+Azure Container Apps depends heavily on correct secrets and env vars.

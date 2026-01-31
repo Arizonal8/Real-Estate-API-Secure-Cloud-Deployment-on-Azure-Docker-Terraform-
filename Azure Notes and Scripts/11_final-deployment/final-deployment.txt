@@ -1,0 +1,20 @@
+# 11_final-deployment.txt
+# Final Deployment and Cleanup
+
+## Problems I Faced
+- Azure revision loop.
+- Old configs still active.
+- Secrets not applied.
+
+## Final Steps
+1. Deactivated all revisions.
+2. Reset secrets.
+3. Updated env vars.
+4. Waited for Azure to create a new revision.
+5. Confirmed logs:
+   - Database connected
+   - ImageKit connected
+   - Server running
+
+## Lessons Learned
+A clean reset often solves everything.
