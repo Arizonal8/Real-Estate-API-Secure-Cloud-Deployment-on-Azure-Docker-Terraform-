@@ -43,13 +43,6 @@ The deployed system consists of:
 - **ImageKit** – image upload and CDN delivery
 - **Terraform** – declarative infrastructure provisioning
 
-📌 Architecture diagram available at:
-
-```
-docs/architecture/system-architecture.png
-```
-
----
 
 ## 🧰 Technology Stack
 
@@ -73,105 +66,6 @@ docs/architecture/system-architecture.png
 - Git & GitHub
 - Postman / Newman
 
----
-
-## 📁 Repository Structure
-
-```
-realestate-api/
-├── Dockerfile
-├── package.json
-├── README.md
-├── SECURITY.md
-│
-├── src/
-│   ├── index.js
-│   ├── app.js
-│   ├── routes/
-│   ├── controllers/
-│   ├── models/
-│   └── utils/
-│
-├── terraform/
-│   ├── main.tf
-│   ├── providers.tf
-│   ├── variables.tf
-│   ├── outputs.tf
-│   ├── containerapp.tf
-│   ├── cosmosdb.tf
-│   └── loganalytics.tf
-│
-├── docs/
-│   ├── architecture/
-│   ├── terraform/
-│   ├── docker/
-│   └── troubleshooting/
-│
-└── notes/
-    ├── 01_initial-setup.txt
-    ├── 02_repo-cleanup.txt
-    ├── 03_terraform-deployment.txt
-    ├── 04_docker-build-and-push.txt
-    ├── 05_azure-container-apps.txt
-    ├── 06_secrets-and-env-vars.txt
-    ├── 07_revision-debugging.txt
-    ├── 08_imagekit-integration.txt
-    ├── 09_cosmosdb-integration.txt
-    └── 10_final-deployment.txt
-```
-
----
-
-## 🚀 Local Development
-
-### Install dependencies
-```bash
-npm install
-```
-
-### Environment variables
-Create a `.env` file:
-
-```env
-MONGO_URI=
-IMAGEKIT_PUBLIC_KEY=
-IMAGEKIT_PRIVATE_KEY=
-IMAGEKIT_URL_ENDPOINT=
-SMTP_USER=
-SMTP_PASS=
-PORT=4000
-```
-
-### Run locally
-```bash
-npm run dev
-```
-
----
-
-## 🐳 Docker
-
-### Build image
-```bash
-docker build -t <dockerhub-username>/realestate-api .
-```
-
-### Push image
-```bash
-docker push <dockerhub-username>/realestate-api
-```
-
----
-
-## ☁️ Azure Deployment (Terraform)
-
-From the `terraform/` directory:
-
-```bash
-terraform init
-terraform plan
-terraform apply
-```
 
 Terraform provisions:
 
@@ -181,42 +75,6 @@ Terraform provisions:
 - Cosmos DB (Mongo API)
 - Azure Container App
 
----
-
-## 🔐 Secret Management
-
-Secrets are never committed to source control.
-
-- Secrets are stored using **Azure Container Apps secrets**
-- Environment variables reference secrets using `secretref`
-
-Example:
-```text
-MONGO_URI=secretref:mongo-uri
-```
-
-Detailed steps are documented in:
-
-```
-notes/06_secrets-and-env-vars.txt
-```
-
----
-
-## 🧪 API Testing
-
-Postman collection:
-
-```
-notes/scripts/postman-collection.json
-```
-
-Run tests:
-```bash
-newman run notes/scripts/postman-collection.json
-```
-
----
 
 ## 🛡️ Security
 
@@ -241,7 +99,7 @@ The `notes/` directory serves as a **developer diary**, documenting:
 
 ## 🙌 Credits & Attribution
 
-Original project forked from:
+The read estate web-app project forked from:
 
 https://github.com/AAYUSH412/Real-Estate-Website
 
