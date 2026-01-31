@@ -110,3 +110,16 @@ This repository extends the original work by focusing on:
 - Azure cloud deployment
 - Security-first configuration
 - Comprehensive documentation
+
+## 📊 Project Scope & Cost Management
+
+**Important:** This project demonstrates a **production-ready deployment setup**, but the Azure resources were intentionally decommissioned after validation to avoid unnecessary cloud costs. This reflects real-world practices where:
+
+1. Infrastructure is provisioned on-demand
+2. Development/test environments are torn down after use
+3. Cloud cost optimization is a priority
+
+**Validation Proof:** All deployment screenshots in the `/Azure Images` directory show the fully functional, running infrastructure before teardown.
+
+**Estimated Runtime Cost:** ~$2-4/day (Container Apps + Cosmos DB)
+**Total Project Cost:** <$20 for full deployment lifecycle
